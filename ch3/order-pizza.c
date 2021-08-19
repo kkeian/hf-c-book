@@ -3,17 +3,17 @@
 
 int main(int argc, char *argv[])
 {
-	char *delivery = "";
+	char *delivery = ""; // Character array.
 	int thick = 0;
 	int count = 0;
 	char ch;
 
-	while ((ch = getopt(argc, argv, "d:t")) != EOF)
+	while ((ch = getopt(argc, argv, "d:t")) != EOF) // Parse command line options.
 	{
 		switch (ch)
 		{
 			case 'd':
-				delivery = optarg;
+				delivery = optarg; // optarg is the command line argument after this flag.
 				break;
 			case 't':
 				thick = 1;
@@ -23,8 +23,12 @@ int main(int argc, char *argv[])
 				return 1;
 		}
 	}
+
+	/* Skip past all all of read arguments on command line */
 	argc -= optind;
 	argv += optind;
+
+
 
 	if (thick)
 		puts("Thick crust.");
