@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 		switch (ch)
 		{
 			case 'd':
-				delivery[0] = optarg;
+				delivery = optarg;
 				break;
 			case 't':
 				thick = 1;
