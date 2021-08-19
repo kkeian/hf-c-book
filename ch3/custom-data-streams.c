@@ -13,13 +13,13 @@ int main(int argc, char *argv[])
 	}
 
 	/* Create/open custom data streams */
-	FILE *in = fopen('spooky.csv', 'r');
-	FILE *file1 = fopen(argv[2], 'w');
-	FILE *file2 = fopen(argv[4], 'w');
-	FILE *file3 = fopen(argv[5], 'w');
+	FILE *in = fopen("spooky.csv", "r");
+	FILE *file1 = fopen(argv[2], "w");
+	FILE *file2 = fopen(argv[4], "w");
+	FILE *file3 = fopen(argv[5], "w");
 	
 	// There is another line with characters.
-	while (strstr(in, "%79[^\n]\n", line) == 1) 
+	while (fscanf(in, "%79[^\n]\n", line) == 1) 
 	{
 		/* Write to respective data streams */
 		if (strstr(line, argv[1]))
